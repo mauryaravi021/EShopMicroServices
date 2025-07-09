@@ -1,9 +1,38 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
 .vscode/
-.vs/
-node_modules/
-dist/
-build/
-out/
+
+# Rider settings
+.idea/
+
+# ASP.NET Core generated files
+*.db
 *.log
-.DS_Store
-Thumbs.db
+*.cache
+*.config
+
+# Generated JSON files
+*.json.cache
+
+# Publish folder
+publish/
+
+# Logs
+*.log
+
+# Other Visual Studio files
+*.vspscc
+*.vssscc
+.vs/
