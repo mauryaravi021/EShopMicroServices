@@ -7,14 +7,9 @@ using MediatR;
 
 namespace BuildingBlocks.CQRS
 {
-    public interface IQueryHandler<in TCommand, TResponse> : IRequestHandler<TCommand, TResponse>
-        where TCommand : ICommand<TResponse>
+    public interface IQueryHandler<in IQuery, TResponse> : IRequestHandler<IQuery, TResponse>
+        where IQuery : IQuery<TResponse>
         where TResponse : notnull
-    {
-    }
-
-    public interface IQueryHandler<in TCommand> : IRequestHandler<TCommand, Unit>
-        where TCommand : ICommand<Unit>
     {
     }
 }
