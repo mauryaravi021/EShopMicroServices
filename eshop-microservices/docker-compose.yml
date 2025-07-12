@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  catalog.api:
+    build:
+      context: ./Services/Catalog/Catalog.API
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    depends_on:
+      - catalogdb
+
+  catalogdb:
+    image: postgres
+
+volumes:
+  postgres_catalog:
