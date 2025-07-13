@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -30,7 +33,7 @@ namespace BuildingBlocks.Behaviors
                 logger.LogWarning("[PERFORMANCE] The request {Request} took {TimeTaken} seconds.",
                     typeof(TRequest).Name, timeTaken.Seconds);
 
-            logger.LogInformation("[END] Handle request={Request} - Response={Response} - ResponseData={ResponseData}", typeof(TRequest).Name, typeof(TResponse).Name, response);
+            logger.LogInformation("[END] Handle request={Request} - Response={Response} - ResponseData={ResponseData}", typeof(TRequest).Name, typeof(TResponse).Name, JsonSerializer.Serialize(response));
             return response;
         }
     }
